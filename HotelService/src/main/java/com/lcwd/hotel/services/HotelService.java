@@ -9,8 +9,8 @@ public interface HotelService {
 
     Hotel create(Hotel hotel);
 
-    List<Hotel> getAll();
+    Iterable<Hotel> getAll();
 
-    Hotel get(String id);
+    Hotel get(Integer id);
 
 }

@@ -17,18 +17,16 @@ public class HotelServiceImpl implements HotelService {
 
     @Override
     public Hotel create(Hotel hotel) {
-        String randomId = UUID.randomUUID().toString();
-        hotel.setId(randomId);
         return hotelRepository.save(hotel);
     }
 
     @Override
-    public List<Hotel> getAll() {
+    public Iterable<Hotel> getAll() {
         return hotelRepository.findAll();
     }
 
     @Override
-    public Hotel get(String id) {
+    public Hotel get(Integer id) {
         return hotelRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Hotel is not found by the Specific id !! "+id));
     }
 }

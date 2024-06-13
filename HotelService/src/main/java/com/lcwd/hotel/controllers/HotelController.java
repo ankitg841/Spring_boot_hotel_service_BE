@@ -21,12 +21,12 @@ public class HotelController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Hotel> get(@PathVariable String id) {
+    public ResponseEntity<Hotel> get(@PathVariable Integer id) {
         return ResponseEntity.status(HttpStatus.OK).body(hotelService.get(id));
     }
 
     @GetMapping
-    public ResponseEntity<List<Hotel>> getAll() {
+    public ResponseEntity<Iterable<Hotel>> getAll() {
         return ResponseEntity.status(HttpStatus.OK).body(hotelService.getAll());
     }
 
